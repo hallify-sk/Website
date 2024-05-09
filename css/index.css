@@ -478,6 +478,11 @@ main {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 2rem;
+      &>div{
+        display: flex;
+        flex-flow: column nowrap;
+        gap: 0.5rem;
+      }
     }
   }
 }
@@ -490,11 +495,38 @@ main {
 .expand div{
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
 }
 
-.expand:focus-within div{
-  max-height: 50px !important;
+.expand button{
+  cursor: pointer;
+  border: none;
+}
+
+.expandContent{
+  box-sizing: border-box !important;
+  padding: 0 1rem;
+  background: var(--);
+  border-bottom-left-radius: var(--border-radius-small);
+  border-bottom-right-radius: var(--border-radius-small);
+}
+
+.expandContent p{
+  margin: 1rem 0;
+}
+
+.expand.open button{
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  background: linear-gradient(
+    45deg,
+    var(--accent) 0%,
+    var(--accent-2) 100%
+  );
+  color: var(--text-white);
+  &:hover {
+    background: linear-gradient(45deg, var(--accent-2) 0%, var(--accent) 100%);
+  }
 }
 
 @media screen and (min-width: 768px) {
