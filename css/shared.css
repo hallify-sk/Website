@@ -5,18 +5,18 @@
   --border-radius-default: 1rem;
   --border-radius-large: 1rem;
 
-  --text: hsl(258, 87%, 3%);
-  --text-white: hsl(0, 0%, 100%);
-  --text-white-subtitle: hsl(0, 0%, 80%);
-  --background: hsl(255, 80%, 98%);
-  --primary: hsl(235, 83%, 59%);
-  --primary-2: hsl(235, 53%, 59%);
-  --secondary: hsl(315, 82%, 73%);
-  --secondary-2: hsl(315, 52%, 73%);
-  --accent: hsl(332, 83%, 65%);
-  --accent-2: hsl(332, 53%, 65%);
-  --white-opaque: hsla(0, 0%, 100%, 0.5);
-  --white-opaque-2: hsla(0, 0%, 100%, 0.2);
+  --text: rgb(5, 1, 14);
+  --text-white: #ffffff;
+  --text-white-subtitle: #cccccc;
+  --background: #f8f6fe;
+  --primary: #404eed;
+  --primary-2: #5f68ce;
+  --secondary: #f382d6;
+  --secondary-2: #de96cc;
+  --accent: #f05ca1;
+  --accent-2: #d576a3;
+  --white-opaque: #ffffff80;
+  --white-opaque-2: #ffffff33;
 
   scroll-behavior: smooth;
 
@@ -166,19 +166,19 @@ header {
   padding: 0.8rem 1.5rem;
   background: linear-gradient(
     45deg,
-    var(--secondary) 0%,
-    var(--secondary-2) 100%
+    var(--primary) 0%,
+    var(--primary-2) 100%
   );
   color: var(--text-white);
   border-radius: var(--border-radius-small);
   text-decoration: none;
   font-size: 1rem;
   &:hover {
-    background: linear-gradient(45deg, var(--accent) 0%, var(--accent-2) 100%);
+    background: linear-gradient(45deg, var(--primary-2) 0%, var(--primary) 100%);
   }
 }
 
-.secondary-button { 
+.additional-button { 
   padding: 0.8rem 1.5rem;
   backdrop-filter: blur(10px);
   background: linear-gradient(
@@ -193,5 +193,38 @@ header {
   &:hover {
     color: var(--text);
     background: linear-gradient(45deg, var(--white-opaque-2) 0%, var(--white-opaque) 100%);
+  }
+}
+
+.accent-button {
+  padding: 0.8rem 1.5rem;
+  background: linear-gradient(
+    45deg,
+    var(--accent) 0%,
+    var(--accent-2) 100%
+  );
+  color: var(--text-white);
+  border-radius: var(--border-radius-small);
+  text-decoration: none;
+  font-size: 1rem;
+  &:hover {
+    background: linear-gradient(45deg, var(--accent-2) 0%, var(--accent) 100%);
+  }
+}
+
+
+.secondary-button {
+  padding: 0.8rem 1.5rem;
+  background: linear-gradient(
+    45deg,
+    var(--secondary) 0%,
+    var(--secondary-2) 100%
+  );
+  color: var(--text-white);
+  border-radius: var(--border-radius-small);
+  text-decoration: none;
+  font-size: 1rem;
+  &:hover {
+    background: linear-gradient(45deg, var(--secondary-2) 0%, var(--secondary) 100%);
   }
 }
