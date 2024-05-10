@@ -455,7 +455,8 @@ main {
 }
 
 #faq{
-  padding: 2rem var(--content-padding);
+  padding: 2rem var(--content-padding) 12rem;
+  background: hsl(0, 0%, 95%);
   h2{
     background: linear-gradient( 30deg, var(--primary) 0%, var(--secondary) 100% );
   -webkit-background-clip: text;
@@ -470,14 +471,11 @@ main {
     margin-inline: auto;
     padding: 2rem;
     width: 100%;
-    box-shadow: 0 0 50px rgba(0, 0, 0, 0.1);
-    border-radius: var(--border-radius-default);
-    background-color: white;
     &>div{
       margin-top: 4rem;
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 2rem;
+      grid-template-columns: repeat(1, 1fr);
+      gap: 0.5rem;
       &>div{
         display: flex;
         flex-flow: column nowrap;
@@ -490,6 +488,10 @@ main {
 .expand{
   display: flex;
   flex-flow: column-reverse nowrap;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0);
+  transition: box-shadow 0.2s ease-in-out;
+  border-radius: var(--border-radius-small);
+  overflow: hidden;
 }
 
 .expand div{
@@ -501,6 +503,7 @@ main {
 .expand button{
   cursor: pointer;
   border: none;
+  text-align: left;
 }
 
 .expandContent{
@@ -508,11 +511,16 @@ main {
   padding: 0 1rem;
   background: var(--);
   border-bottom-left-radius: var(--border-radius-small);
+  overflow: hidden;
   border-bottom-right-radius: var(--border-radius-small);
 }
 
 .expandContent p{
   margin: 1rem 0;
+}
+
+.expand.open{
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.2);
 }
 
 .expand.open button{
@@ -526,6 +534,71 @@ main {
   color: var(--text-white);
   &:hover {
     background: linear-gradient(45deg, var(--accent-2) 0%, var(--accent) 100%);
+  }
+}
+
+#contact{
+  padding: 2rem var(--content-padding);
+  background: white;
+  h2{
+    background: linear-gradient( 30deg, var(--primary) 0%, var(--secondary) 100% );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: var(--primary);
+  width: fit-content;
+  text-align: left;
+  margin-bottom: 1rem;
+  }
+  form{
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 0.25rem;
+  }
+  input, textarea{
+    background: hsl(0, 0%, 90%);
+    width: 100%;
+    padding: 0.8rem;
+    font-size: 1rem;
+    border-radius: var(--border-radius-small);
+    color: var(--text-black);
+    border: 2px solid transparent;
+    letter-spacing: normal;
+  }
+  input:focus, textarea:focus{
+    color: var(--primary);
+    border: 2px solid var(--primary);
+    outline: none;
+  }
+  &>div{
+    margin-top: -8rem;
+    max-width: var(--content-width);
+    margin-inline: auto;
+    padding: 2rem;
+    width: 100%;
+    background-color: white;
+    border-radius: var(--border-radius-default);
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.1);
+    &>div{
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.5rem;
+      fieldset{
+        border: none;
+      }
+      textarea{
+        resize: vertical;
+        width: 100%;
+        height: 100%;
+        min-height: 200px;
+        max-height: 400px;
+      }
+      &>div{
+        display: flex;
+        flex-flow: column nowrap;
+        gap: 0.5rem;
+      }
+    }
   }
 }
 
@@ -556,6 +629,14 @@ main {
 
   .legend {
     display: flex !important;
+  }
+  #faq{
+    &>div{
+      &>div{
+        gap: 2rem;
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
   }
 }
 
