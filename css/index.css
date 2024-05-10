@@ -401,58 +401,6 @@ main {
     }
   }
 }
-@media screen and (min-width: 1000px) {
-  .grid {
-    div {
-      display: grid !important;
-      grid-template-columns: repeat(2, 1fr) !important;
-      grid-template-rows: auto !important;
-      div {
-        display: flex !important;
-        img {
-          width: 500px !important;
-        }
-        #stage {
-          width: 400px !important;
-        }
-      }
-    }
-  }
-  #vKocke .content > div {
-    display: grid !important;
-    grid-template-columns: repeat(2, 1fr) !important;
-    grid-template-rows: auto !important;
-    img{
-      width: 500px !important;
-    }
-  }
-  #reviews{
-    &>div{
-      &>div{
-        grid-template-columns: repeat(3, 1fr);
-      }
-    }
-    .profile{
-      display: flex;
-      flex-flow: row nowrap;
-      align-items: center;
-      gap: 1rem;
-      div{
-        display: flex;
-        flex-flow: column nowrap;
-        gap: 0;
-        p:first-of-type{
-          font-size: 1.1rem;
-          color: var(--text-black);
-        }
-      }
-      p:last-of-type{
-        font-size: 0.85rem;
-        color: var(--primary);
-      }
-    }
-  }
-}
 
 #faq{
   padding: 2rem var(--content-padding) 12rem;
@@ -558,7 +506,7 @@ main {
   input, textarea{
     background: hsl(0, 0%, 90%);
     width: 100%;
-    padding: 0.8rem;
+    padding: 0.4rem 1rem;
     font-size: 1rem;
     border-radius: var(--border-radius-small);
     color: var(--text-black);
@@ -581,8 +529,8 @@ main {
     box-shadow: 0 0 50px rgba(0, 0, 0, 0.1);
     &>div{
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 0.5rem;
+      grid-template-columns: repeat(1, 1fr);
+      gap: 2rem;
       fieldset{
         border: none;
       }
@@ -595,8 +543,77 @@ main {
       }
       &>div{
         display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
         flex-flow: column nowrap;
-        gap: 0.5rem;
+        &>div{
+          display: flex;
+          flex-flow: column nowrap;
+          justify-content: center;
+          align-items: center;
+          gap: 0.5rem;
+          padding: 1rem 3rem;
+          width: 100%;
+          color: var(--primary);
+          svg{
+            width: 2rem;
+            height: 2rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .grid {
+    div {
+      display: grid !important;
+      grid-template-columns: repeat(2, 1fr) !important;
+      grid-template-rows: auto !important;
+      div {
+        display: flex !important;
+        img {
+          width: 500px !important;
+        }
+        #stage {
+          width: 400px !important;
+        }
+      }
+    }
+  }
+  #vKocke .content > div {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    grid-template-rows: auto !important;
+    img{
+      width: 500px !important;
+    }
+  }
+  #reviews{
+    &>div{
+      &>div{
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    .profile{
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      gap: 1rem;
+      div{
+        display: flex;
+        flex-flow: column nowrap;
+        gap: 0;
+        p:first-of-type{
+          font-size: 1.1rem;
+          color: var(--text-black);
+        }
+      }
+      p:last-of-type{
+        font-size: 0.85rem;
+        color: var(--primary);
       }
     }
   }
@@ -634,6 +651,13 @@ main {
     &>div{
       &>div{
         gap: 2rem;
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  }
+  #contact{
+    &>div{
+      &>div{
         grid-template-columns: repeat(2, 1fr);
       }
     }
