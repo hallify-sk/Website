@@ -25,6 +25,20 @@
       <div class="logo-wrapper">
         <a href="/" class="poppins-black-italic">Hallify</a>
       </div>
+      <input type="checkbox" name="isNavOpen" id="isNavOpen">
+      <label aria-label="Toggle navigation" for="isNavOpen">
+        <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-menu-2"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 6l16 0" /><path d="M4 12l16 0" /><path d="M4 18l16 0" /></svg>
+      </label>
+      <div class="links">
+        <label tabindex="0" aria-label="Close navigation" for="isNavOpen">
+          <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-x"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M18 6l-12 12" /><path d="M6 6l12 12" /></svg>
+        </label>
+        <a href="#planRozlozenia" tabindex="0" class="poppins-regular">Prečo Hallify?</a>
+        <a href="#vKocke" class="poppins-regular">Výhody</a>
+        <a href="#reviews" class="poppins-regular">Referencie</a>
+        <a href="#contact" class="poppins-regular highlight">Kontakt</a>
+      </div>
+      <div class="shadow"></div>
     </header>
     <section class="hero">
       <div class="hero-content">
@@ -36,7 +50,7 @@
           Zmodernizujte plánovanie udalostí vo vašej sále
         </p>
         <div>
-          <a href="/login" class="poppins-regular accent-button">Kontaktujte nás</a>
+          <a href="#contact" class="poppins-regular accent-button">Kontaktujte nás</a>
           <a href="#planRozlozenia" class="poppins-regular additional-button">Zistiť viac</a>
         </div>
       </div>
@@ -170,7 +184,7 @@
           <p class="poppins-regular">
             Všetky rezervácie sa automaticky zapíšu do kalendára, kde si ich viete následne zobraziť.
           </p>
-          <a class="accent-button poppins-regular" href="#riesenie">Kontaktujte nás</a>
+          <a class="accent-button poppins-regular" href="#contact">Kontaktujte nás</a>
         </div>
       </div>
     </div>
@@ -318,8 +332,8 @@
         <div>
           <div class="expand">
             <div class="expandContent">
-              <p class="poppins-regular">Hallify je platený správcom sály vo výške (X)€/mesiac, s dobrovoľným
-                jednorázovým mapovacím poplatkom, ktorý sa odvíja od veľkosti sály. Vaši klienti za používanie
+              <p class="poppins-regular">Hallify je platený správcom sály vo výške (X)€/mesiac, s
+                jednorázovým mapovacím poplatkom, ktorý sa odvíja od komplexity sály, a veľkosti migrovaných dát zo starých systémov. Vaši klienti za používanie
                 uživateľského rozhrania neplatia nič.</p>
             </div>
             <button class="primary-button">Koľko stojí Hallify?</button>
@@ -343,28 +357,28 @@
         <div>
           <div class="expand">
             <div class="expandContent">
-              <p class="poppins-regular">Test content of expand element</p>
+              <p class="poppins-regular">Túto funkcionalitu zatiaľ nepodporujeme, ale určite ju zvažujeme do budúcnosti.</p>
             </div>
-            <button class="primary-button">Otázka #4</button>
+            <button class="primary-button">Viem prijímať platby cez Hallify?</button>
           </div>
           <div class="expand">
             <div class="expandContent">
-              <p class="poppins-regular">Test content of expand element</p>
+              <p class="poppins-regular">Údaje uživateľov sú spracované systémom Pocketbase, ktorý je izolovaný od verejného internetu. Heslá sú bezpečne šifrované, a nemôžu si ich pozrieť ani administrátori.</p>
             </div>
-            <button class="primary-button">Otázka #5</button>
+            <button class="primary-button">Aké bezpečnostné opatrenia máte na ochranu údajov zákazníkov?</button>
           </div>
           <div class="expand">
             <div class="expandContent">
-              <p class="poppins-regular">Test content of expand element</p>
+              <p class="poppins-regular">Štandardná doba je 14 dní, ale táto doba sa môže zmeniť v závislosti od kompexity sály a od množstva migrovaných dát zo starých systémov.</p>
             </div>
-            <button class="primary-button">Otázka #6</button>
+            <button class="primary-button">Ako dlho trvá implementácia systému Hallify do mojej existujúcej infraštruktúry?</button>
           </div>
         </div>
       </div>
     </div>
   </section>
-  <section id="contact">
-    <div>
+  <section id="contactWrapper">
+    <div id="contact">
       <h2 class="poppins-bold">Kontakt</h2>
       <div>
         <form method="post">
@@ -399,8 +413,30 @@
       </div>
     </div>
   </section>
+  <footer>
+    <div>
+      <div>
+        <a href="/" class="poppins-black-italic logo">Hallify</a>
+        <p class="poppins-regular">© 2024 Hallify.sk</p>
+      </div>
+      <div class="links">
+        <a href="#planRozlozenia" class="poppins-regular">Prečo Hallify?</a>
+        <a href="#vKocke" class="poppins-regular">Výhody</a>
+        <a href="#reviews" class="poppins-regular">Referencie</a>
+        <a href="#contact" class="poppins-regular">Kontakt</a>
+      </div>
+    </div>
+    <span>
+      <p class="poppins-regular">Website by <a target="_blank" rel="noreferrer" class="poppins-bold" href="https://github.com/Em1tt/">Richard Marcinčák</a></p>
+    </span>
+  </footer>
 
-  <script lang="js" src="/js/accordion.js"></script>
+<button aria-label="Go up" id="backToTop" aria-hidden="true">
+  <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-arrow-up"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 5l0 14" /><path d="M18 11l-6 -6" /><path d="M6 11l6 -6" /></svg>
+</button>
+
+  <script lang="js" src="/js/navigation.js"></script>
+  <script lang="js" defer src="/js/accordion.js"></script>
 </body>
 
 </html>

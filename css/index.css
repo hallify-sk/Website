@@ -309,7 +309,7 @@ main {
   display: flex;
   flex-flow: column nowrap;
   height: 100%;
-  padding: 2rem var(--content-padding);
+  padding: 2rem var(--content-padding) 4rem;
   align-items: center;
       gap: 2rem;
       justify-content: center;
@@ -414,10 +414,13 @@ main {
   width: fit-content;
   margin-inline: auto;
   }
+  .open button:active{
+    scale: 1;
+  }
   &>div{
     max-width: var(--content-width);
     margin-inline: auto;
-    padding: 2rem;
+    padding: 0;
     width: 100%;
     &>div{
       margin-top: 4rem;
@@ -485,7 +488,7 @@ main {
   }
 }
 
-#contact{
+#contactWrapper{
   padding: 2rem var(--content-padding);
   background: white;
   h2{
@@ -655,7 +658,7 @@ main {
       }
     }
   }
-  #contact{
+  #contactWrapper{
     &>div{
       &>div{
         grid-template-columns: repeat(2, 1fr);

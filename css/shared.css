@@ -1,9 +1,9 @@
 :root {
   --content-width: 1280px;
-  --content-padding: 3rem;
+  --content-padding: 2rem;
   --border-radius-small: 0.5rem;
   --border-radius-default: 1rem;
-  --border-radius-large: 1rem;
+  --border-radius-large: 2rem;
 
   --text: rgb(5, 1, 14);
   --text-white: #ffffff;
@@ -132,7 +132,6 @@
     font-weight: 400;
     font-style: normal;
   }
-  
 }
 
 * {
@@ -148,6 +147,10 @@ header {
   padding-inline: var(--content-padding);
   height: fit-content;
   margin-inline: auto;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
   .logo-wrapper {
     display: flex;
     justify-content: space-between;
@@ -160,28 +163,85 @@ header {
       font-size: 1.3rem;
     }
   }
+  input {
+    display: none;
+  }
+  & > label {
+    cursor: pointer;
+    color: white;
+  }
+  label:hover {
+    color: var(--secondary);
+  }
+  .links {
+    width: 260px;
+    flex-flow: column nowrap;
+    justify-content: start;
+    position: fixed;
+    right: -260px;
+    z-index: 50;
+    top: 0;
+    height: 100vh;
+    background: white;
+    padding: 2rem 2rem;
+    border-top-left-radius: var(--border-radius-large);
+    transition: right 0.2s ease-in-out;
+    & > label {
+      cursor: pointer;
+      color: var(--secondary);
+      margin-left: auto;
+    }
+    & > label:hover {
+      color: var(--primary);
+    }
+  }
+  #isNavOpen:checked ~ .links {
+    right: 0;
+  }
+  .shadow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 49;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+    visibility: hidden;
+  }
+  #isNavOpen:checked ~ .shadow {
+    opacity: 1;
+    visibility: visible;
+  }
 }
 
 .primary-button {
   border: none;
+  transition: scale 0.1s ease;
   padding: 0.8rem 1.5rem;
   cursor: pointer;
-  background: linear-gradient(
-    45deg,
-    var(--primary) 0%,
-    var(--primary-2) 100%
-  );
+  background: linear-gradient(45deg, var(--primary) 0%, var(--primary-2) 100%);
   color: var(--text-white);
   border-radius: var(--border-radius-small);
   text-decoration: none;
   font-size: 1rem;
   &:hover {
-    background: linear-gradient(45deg, var(--primary-2) 0%, var(--primary) 100%);
+    background: linear-gradient(
+      45deg,
+      var(--primary-2) 0%,
+      var(--primary) 100%
+    );
+  }
+  &:active{
+    scale: 0.9;
   }
 }
 
-.additional-button { 
+.additional-button {
   border: none;
+  transition: scale 0.1s ease;
   padding: 0.8rem 1.5rem;
   cursor: pointer;
   backdrop-filter: blur(10px);
@@ -196,19 +256,23 @@ header {
   font-size: 1rem;
   &:hover {
     color: var(--text);
-    background: linear-gradient(45deg, var(--white-opaque-2) 0%, var(--white-opaque) 100%);
+    background: linear-gradient(
+      45deg,
+      var(--white-opaque-2) 0%,
+      var(--white-opaque) 100%
+    );
+  }
+  &:active{
+    scale: 0.9;
   }
 }
 
 .accent-button {
   border: none;
+  transition: scale 0.1s ease;
   padding: 0.8rem 1.5rem;
   cursor: pointer;
-  background: linear-gradient(
-    45deg,
-    var(--accent) 0%,
-    var(--accent-2) 100%
-  );
+  background: linear-gradient(45deg, var(--accent) 0%, var(--accent-2) 100%);
   color: var(--text-white);
   border-radius: var(--border-radius-small);
   text-decoration: none;
@@ -216,11 +280,14 @@ header {
   &:hover {
     background: linear-gradient(45deg, var(--accent-2) 0%, var(--accent) 100%);
   }
+  &:active{
+    scale: 0.9;
+  }
 }
-
 
 .secondary-button {
   border: none;
+  transition: scale 0.1s ease;
   padding: 0.8rem 1.5rem;
   cursor: pointer;
   background: linear-gradient(
@@ -233,6 +300,188 @@ header {
   text-decoration: none;
   font-size: 1rem;
   &:hover {
-    background: linear-gradient(45deg, var(--secondary-2) 0%, var(--secondary) 100%);
+    background: linear-gradient(
+      45deg,
+      var(--secondary-2) 0%,
+      var(--secondary) 100%
+    );
+  }
+  &:active{
+    scale: 0.9;
+  }
+}
+
+footer {
+  background-color: rgb(30, 30, 30);
+  display: flex;
+  flex-flow: column nowrap;
+  & > div {
+    margin-inline: auto;
+    width: 100%;
+    max-width: var(--content-width);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem var(--content-padding);
+    gap: 1rem;
+    a.logo {
+      text-decoration: none;
+      color: white;
+      font-size: 1.3rem;
+      & + p {
+        color: white;
+        font-size: 1rem;
+      }
+    }
+  }
+  & > span {
+    background: black;
+    color: white;
+    font-size: 1rem;
+    text-align: center;
+    padding: 0.75rem var(--content-padding);
+    a {
+      background: linear-gradient(
+        30deg,
+        var(--primary) 0%,
+        var(--secondary) 100%
+      );
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      color: var(--primary);
+      width: fit-content;
+      text-decoration: none;
+    }
+    a:hover {
+      background: linear-gradient(
+        30deg,
+        var(--secondary) 0%,
+        var(--primary) 100%
+      );
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      color: var(--primary);
+    }
+  }
+}
+.links {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: right;
+  gap: 1rem;
+  a {
+    text-decoration: none;
+    color: var(--secondary);
+    font-size: 1rem;
+  }
+  a:hover {
+    color: var(--primary);
+  }
+}
+
+.highlight {
+  border: none;
+  cursor: pointer;
+  background: transparent;
+  color: var(--text-white);
+  border-radius: var(--border-radius-small);
+  padding: unset;
+  &:hover {
+    background: transparent;
+  }
+}
+
+#backToTop{
+  position: fixed;
+  transition: scale 0.1s ease, right 0.5s ease;
+  bottom: 1rem;
+  right: -5rem;
+  background: var(--primary);
+  color: var(--text-white);
+  border: none;
+  border-radius: var(--border-radius-small);
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  &.show{
+    right: 1rem;
+  }
+  &:hover{
+    background: var(--secondary);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  }
+  svg{
+    pointer-events: none;
+  }
+  &:active{
+    scale: 0.9;
+  }
+}
+
+.playAnimation{
+  &>div{
+    &>div:first-of-type{
+      animation: shoot 0.3s linear forwards;
+      animation-timing-function: ease-in-out;
+    }
+    &>div:nth-of-type(2){
+      animation: 0.3s shoot-2 linear infinite;
+      animation-timing-function: ease-out;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  :root{
+    --content-padding: 4rem;
+  }
+
+  header {
+    label {
+      display: none;
+    }
+    .links {
+      position: initial;
+      background: none;
+      height: initial;
+      width: initial;
+      display: flex;
+      flex-flow: row wrap;
+      align-items: center;
+      justify-content: right;
+      gap: 2rem;
+      a {
+        text-decoration: none;
+        color: var(--text-white);
+        font-size: 1rem;
+      }
+      a:not(.highlight):hover {
+        color: var(--secondary);
+      }
+    }
+    .highlight {
+      border: none;
+      cursor: pointer;
+      background: linear-gradient(
+        45deg,
+        var(--secondary) 0%,
+        var(--secondary-2) 100%
+      );
+      color: var(--text-white);
+      border-radius: var(--border-radius-small);
+      padding: 0.5rem 1rem;
+      &:hover {
+        background: linear-gradient(
+          45deg,
+          var(--secondary-2) 0%,
+          var(--secondary) 100%
+        );
+        color: black;
+      }
+    }
+  }
+  .shadow{
+    display: none;
   }
 }
