@@ -41,7 +41,7 @@
     if (empty($errors)) {
       $toEmail = 'ahoj@hallify.sk';
        $emailSubject = 'New email from your contact form';
-       $headers = ['From' => $email, 'Reply-To' => $email, 'Content-type' => 'text/html; charset=utf-8'];
+       $headers = ['From' => "form@hallify.sk", 'Reply-To' => $email, 'Content-type' => 'text/html; charset=utf-8'];
        $bodyParagraphs = ["Meno: {$name}<br>", "E-Mail: {$email}<br>", "Správa:", $message];
        $body = join(PHP_EOL, $bodyParagraphs);
 
