@@ -39,7 +39,7 @@
     }
 
     if (empty($errors)) {
-      $toEmail = 'admin@hallify.sk';
+      $toEmail = 'ahoj@hallify.sk';
        $emailSubject = 'New email from your contact form';
        $headers = ['From' => $email, 'Reply-To' => $email, 'Content-type' => 'text/html; charset=utf-8'];
        $bodyParagraphs = ["Meno: {$name}<br>", "E-Mail: {$email}<br>", "Správa:", $message];
