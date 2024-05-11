@@ -1,5 +1,5 @@
 body {
-  background: url("/static/Background.svg");
+  background: url("/img/Background.svg");
   height: 100vh;
   width: 100vw;
   padding-inline: var(--content-padding);

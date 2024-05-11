@@ -134,7 +134,7 @@ main {
 .points {
   width: 100%;
   text-align: center;
-  background-image: url(/static/bg.png);
+  background-image: url(/img/bg.png);
   h2 {
     background: linear-gradient(
       30deg,

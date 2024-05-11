@@ -158,7 +158,7 @@
     <div class="grid">
       <div id="planRozlozenia">
         <div class="image-wrapper">
-          <img src="/static/nacrt.svg" width="500" alt="Event illustration" />
+          <img src="/img/nacrt.svg" width="500" alt="Event illustration" />
         </div>
         <div class="content">
           <h2 class="poppins-bold">Prečo Hallify?</h2>
@@ -211,12 +211,12 @@
               <p class="poppins-regular">Vchod do<br> kuchyne</p>
             </div>
           </div>
-          <img src="/static/stage.png" id="stage" width="400" alt="Event illustration" />
+          <img src="/img/stage.png" id="stage" width="400" alt="Event illustration" />
         </div>
       </div>
       <div id="bestCalendar">
         <div class="image-wrapper">
-          <img src="/static/Calendar.svg" alt="Event illustration" />
+          <img src="/img/Calendar.svg" alt="Event illustration" />
         </div>
         <div class="content">
           <h2 class="poppins-bold">A to nie je všetko</h2>
@@ -237,7 +237,7 @@
       <h2 class="poppins-bold">Výhody Hallify</h2>
       <div>
         <div>
-          <img src="/static/Graf.svg" width="500" alt="Event illustration" />
+          <img src="/img/Graf.svg" width="500" alt="Event illustration" />
         </div>
         <div class="text">
           <p class="poppins-regular">Hallify je systém prispôsobený vaším požiadavkám. Výhody zahŕňajú:</p>
@@ -309,7 +309,7 @@
       <div>
         <div>
           <div class="profile">
-            <img src="/static/Profile2.svg" alt="Profile picture" />
+            <img src="/img/Profile2.svg" alt="Profile picture" />
             <div>
               <p class="poppins-medium">Jana Opatrná</p>
               <p class="poppins-regular">Finančná kontrolórka</p>
@@ -322,7 +322,7 @@
         </div>
         <div>
           <div class="profile">
-            <img src="/static/Profile1.svg" alt="Profile picture" />
+            <img src="/img/Profile1.svg" alt="Profile picture" />
             <div>
               <p class="poppins-medium">Juraj Rozbehnutý</p>
               <p class="poppins-regular">Ex-holoritník</p>
@@ -335,7 +335,7 @@
         </div>
         <div>
           <div class="profile">
-            <img src="/static/Profile2.svg" alt="Profile picture" />
+            <img src="/img/Profile2.svg" alt="Profile picture" />
             <div>
               <p class="poppins-medium">Alica Nadšená</p>
               <p class="poppins-regular">Mama 2 detí</p>
