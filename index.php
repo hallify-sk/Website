@@ -93,11 +93,11 @@
     <section class="hero">
       <div class="hero-content">
         <h1 class="poppins-bold">
-          <span class="pacifico-regular">Najmodernejší</span>
-          rezervačný systém pre spoločenské sály
+          <span class="pacifico-regular">Zmodernizujte</span>
+          plánovanie udalostí vo vašej sále
         </h1>
         <p class="poppins-regular">
-          Zmodernizujte plánovanie udalostí vo vašej sále
+          Najmodernejší systém pre spoločenské sály
         </p>
         <div>
           <a href="#contact" class="poppins-regular accent-button">Kontaktujte nás</a>
