@@ -22,6 +22,11 @@
   if (!empty($_POST)) {
     $name = $_POST['name'];
     $email = $_POST['email'];
+    $tel = $_POST['tel'];
+    $org = $_POST['org'];
+    $location = $_POST['location'];
+    $capacity = $_POST['capacity'];
+    $eventCount = $_POST['eventCount'];
     $message = $_POST['message'];
 
     if (empty($name) || trim($name) == "") {
@@ -32,6 +37,14 @@
       $errors[] = 'E-mail je prázdny';
     } else if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
       $errors[] = 'E-mail nie je platný';
+    }
+
+    if (empty($tel) || trim($tel) == "") {
+      $errors[] = 'Telefónné číslo je prázdne';
+    }
+
+    if (empty($org) || trim($org) == "") {
+      $errors[] = 'Organizácia je prázdna';
     }
 
     if (empty($message)) {
@@ -97,7 +110,7 @@
           plánovanie udalostí vo vašej sále
         </h1>
         <p class="poppins-regular">
-          Najmodernejší systém pre spoločenské sály
+          Hallify je najmodernejší rezervačný systém pre spoločenské sály
         </p>
         <div>
           <a href="#contact" class="poppins-regular accent-button">Kontaktujte nás</a>
@@ -108,6 +121,20 @@
   </main>
   <section class="benefits">
     <div class="wrapper">
+    <div>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-palette">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <path d="M12 21a9 9 0 0 1 0 -18c4.97 0 9 3.582 9 8c0 1.06 -.474 2.078 -1.318 2.828c-.844 .75 -1.989 1.172 -3.182 1.172h-2.5a2 2 0 0 0 -1 3.75a1.3 1.3 0 0 1 -1 2.25" />
+          <path d="M8.5 10.5m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
+          <path d="M12.5 7.5m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
+          <path d="M16.5 10.5m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
+        </svg>
+        <p class="poppins-medium">Rozloženie sály</p>
+        <p class="poppins-regular">
+          Po zmapovaní sály si vaši klienti budú môcť navrhnúť rozloženie
+          stolov vo vašej sále v našom jedinečnom editore.
+        </p>
+      </div>
       <div>
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-wifi">
           <path stroke="none" d="M0 0h24v24H0z" fill="none" />
@@ -136,20 +163,6 @@
         <p class="poppins-regular">
           Všetky rezervácie sa automaticky zapíšu do kalendára, aby ste mali
           všetky rezervácie pokope.
-        </p>
-      </div>
-      <div>
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-palette">
-          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-          <path d="M12 21a9 9 0 0 1 0 -18c4.97 0 9 3.582 9 8c0 1.06 -.474 2.078 -1.318 2.828c-.844 .75 -1.989 1.172 -3.182 1.172h-2.5a2 2 0 0 0 -1 3.75a1.3 1.3 0 0 1 -1 2.25" />
-          <path d="M8.5 10.5m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
-          <path d="M12.5 7.5m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
-          <path d="M16.5 10.5m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
-        </svg>
-        <p class="poppins-medium">Rozloženie sály</p>
-        <p class="poppins-regular">
-          Po zmapovaní sály si vaši klienti budú môcť navrhnúť rozloženie
-          stolov vo vašej sále v našom jedinečnom editore.
         </p>
       </div>
     </div>
@@ -303,7 +316,7 @@
       </div>
     </div>
   </section>
-  <section id="reviews">
+  <!--<section id="reviews">
     <div>
       <h2 class="poppins-bold">Referencie</h2>
       <div>
@@ -348,7 +361,7 @@
         </div>
       </div>
     </div>
-  </section>
+  </section>-->
   <section id="faq">
     <div>
       <h2 class="poppins-bold">Často kladené otázky</h2>
@@ -403,14 +416,31 @@
   </section>
   <section id="contactWrapper">
     <div id="contact">
-      <h2 class="poppins-bold">Kontakt</h2>
+      <h2 class="poppins-bold">Ozvite sa nám</h2>
       <div>
         <form method="post" action="/#contact">
           <?php echo ((!empty($errorMessage)) ? $errorMessage : '') ?>
           <input <?php echo ((!empty($_POST['name'])) ? "value='$_POST[name]'" : '') ?> class="poppins-regular" name="name" id="name" placeholder="Vaše meno" type="text"><br>
           <input <?php echo ((!empty($_POST['email'])) ? "value='$_POST[email]'" : '') ?> class="poppins-regular" name="email" id="email" placeholder="Váš E-mail" type="email"><br>
+          <input <?php echo ((!empty($_POST['tel'])) ? "value='$_POST[tel]'" : '') ?> class="poppins-regular" name="tel" id="tel" placeholder="Vaše telefónne číslo" type="tel"><br>
+          <input <?php echo ((!empty($_POST['org'])) ? "value='$_POST[org]'" : '') ?> class="poppins-regular" name="org" id="org" placeholder="Názov organizácie" type="text"><br>
+          <input <?php echo ((!empty($_POST['location'])) ? "value='$_POST[location]'" : '') ?> class="poppins-regular" name="location" id="location" placeholder="Lokácia sály" type="text"><br>
+          <select name="capacity" id="capacity" required>
+            <option selected disabled value="">Kapacita sály</option>
+            <option value="do50">Do 30 ľudí</option>
+            <option value="">30 - 75 ľudí</option>
+            <option value="">75 - 150 ľudí</option>
+            <option value="">150+ ľudí</option>
+          </select>
+          <select name="eventCount" id="eventCount" required>
+            <option selected disabled value="">Orientačný počet podujatí ročne</option>
+            <option value="do50">Do 50 podujatí za rok</option>
+            <option value="">50 - 149 podujatí za rok</option>
+            <option value="">150 - 299 podujatí za rok</option>
+            <option value="">300+ podujatí za rok</option>
+          </select>
           <textarea <?php echo ((!empty($_POST['message'])) ? "value='$_POST[message]'" : '') ?> placeholder="Vaša správa (napr. informácie o sále)" class="poppins-regular" maxlength="2000" name="message" id="message"></textarea>
-          <button type="submit" class="accent-button">Odoslať</button>
+          <button type="submit" class="accent-button">Získajte Hallify od 19,99€/mesiac</button>
         </form>
         <div>
           <div>
