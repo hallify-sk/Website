@@ -88,6 +88,17 @@ main {
   }
 }
 
+form select {
+  background: hsl(0, 0%, 90%);
+  font-family: 'Poppins', sans-serif;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid hsl(0, 0%, 90%);
+  border-radius: 4px;
+  box-sizing: border-box;
+  color: var(---secondary) ;
+}
+
 .benefits {
   width: 100%;
   max-width: var(--content-width);
@@ -658,13 +669,20 @@ main {
       }
     }
   }
-  #contactWrapper{
-    &>div{
-      &>div{
-        grid-template-columns: repeat(2, 1fr);
-      }
+  #contactWrapper {
+    & > div {
+        & > div {
+            &> div {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 1rem;
+                flex-flow: column nowrap;
+                flex-direction: row;
+            }
+        }
     }
-  }
+}
 }
 
 @keyframes float {
