@@ -177,7 +177,7 @@
           <h2 class="poppins-bold">Prečo Hallify?</h2>
 
           <h3 class="poppins-bold">Toto je plán rozloženia stolov</h3>
-          <p class="poppins-regular">
+          <p class="poppins-regular" >
             Táto ilustrácia je graficky pretvorený plán nakreslený klientom na
             papier. Vyznáte sa v tom?
           </p>
@@ -425,19 +425,19 @@
           <input <?php echo ((!empty($_POST['tel'])) ? "value='$_POST[tel]'" : '') ?> class="poppins-regular" name="tel" id="tel" placeholder="Vaše telefónne číslo" type="tel"><br>
           <input <?php echo ((!empty($_POST['org'])) ? "value='$_POST[org]'" : '') ?> class="poppins-regular" name="org" id="org" placeholder="Názov organizácie" type="text"><br>
           <input <?php echo ((!empty($_POST['location'])) ? "value='$_POST[location]'" : '') ?> class="poppins-regular" name="location" id="location" placeholder="Lokácia sály" type="text"><br>
-          <select name="capacity" id="capacity" required>
-            <option selected disabled value="">Kapacita sály</option>
-            <option value="do50">Do 30 ľudí</option>
-            <option value="">30 - 75 ľudí</option>
-            <option value="">75 - 150 ľudí</option>
-            <option value="">150+ ľudí</option>
+          <select class="poppins-regular" name="capacity" id="capacity" required>
+            <option class="poppins-regular" selected disabled value="">Kapacita sály</option>
+            <option class="poppins-regular" value="do50">Do 30 ľudí</option>
+            <option class="poppins-regular" value="">30 - 75 ľudí</option>
+            <option class="poppins-regular"value="">75 - 150 ľudí</option>
+            <option class="poppins-regular" value="">150+ ľudí</option>
           </select>
-          <select name="eventCount" id="eventCount" required>
-            <option selected disabled value="">Orientačný počet podujatí ročne</option>
-            <option value="do50">Do 50 podujatí za rok</option>
-            <option value="">50 - 149 podujatí za rok</option>
-            <option value="">150 - 299 podujatí za rok</option>
-            <option value="">300+ podujatí za rok</option>
+          <select class="poppins-regular" name="eventCount" id="eventCount" required>
+            <option class="poppins-regular" selected disabled value="">Orientačný počet podujatí ročne</option>
+            <option class="poppins-regular" value="do50">Do 50 podujatí za rok</option>
+            <option class="poppins-regular" value="">50 - 149 podujatí za rok</option>
+            <option class="poppins-regular" value="">150 - 299 podujatí za rok</option>
+            <option class="poppins-regular" value="">300+ podujatí za rok</option>
           </select>
           <textarea <?php echo ((!empty($_POST['message'])) ? "value='$_POST[message]'" : '') ?> placeholder="Vaša správa (napr. informácie o sále)" class="poppins-regular" maxlength="2000" name="message" id="message"></textarea>
           <button type="submit" class="accent-button">Získajte Hallify od 19,99€/mesiac</button>
