@@ -416,7 +416,7 @@
   </section>
   <section id="contactWrapper">
     <div id="contact">
-      <h2 class="poppins-bold">Ozvite sa nám</h2>
+      <h2 class="poppins-bold">Nechajte nám váš kontakt, ozveme sa vám</h2>
       <div>
         <form method="post" action="/#contact">
           <?php echo ((!empty($errorMessage)) ? $errorMessage : '') ?>
@@ -440,7 +440,7 @@
             <option class="poppins-regular" value="">300+ podujatí za rok</option>
           </select>
           <textarea <?php echo ((!empty($_POST['message'])) ? "value='$_POST[message]'" : '') ?> placeholder="Vaša správa (napr. informácie o sále)" class="poppins-regular" maxlength="2000" name="message" id="message"></textarea>
-          <button type="submit" class="accent-button">Získajte Hallify od 19,99€/mesiac</button>
+          <button type="submit" class="accent-button">Odoslať</button>
         </form>
         <div>
           <div>
